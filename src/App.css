@@ -48,6 +48,10 @@
  .sidebar{
    padding: 0 !important;
  }
+
+ *{
+  font-family: 'Mulish', sans-serif;
+ }
 /*
  .menu-item > a {
    width: 70%;

@@ -1,18 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { DisappearedLoading } from 'react-loadingg';
+
 
 export default function Header() {
   return (
     <>
       {/* Preloader */}
-      <div className="preloader flex-column justify-content-center align-items-center">
+      <div className="preloader d-flex justify-content-center align-items-center" style={{backgroundColor:"#fff"}}>
         <img
           className="animation__shake"
-          src="packfast_logo.png"
+          src="trelloLogo.png"
           alt="AdminLTELogo"
           height="auto"
           width={150}
         />
+        <DisappearedLoading/>
       </div>
       {/* Navbar */}
       <nav  style={{height:'55px'}} className="main-header navbar navbar-expand navbar-white navbar-light">

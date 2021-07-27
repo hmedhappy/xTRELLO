@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import ChatPanel from "./ChatPanel"
 
 export default function SideBar() {
 
@@ -19,9 +20,12 @@ export default function SideBar() {
             {
                 <aside className="main-sidebar sidebar-dark-primary elevation-4" style={{backgroundColor: "#1E1E2D"}}>
                     <Link to="/" className="brand-link">
-                    <div className="nav-item has-treeview d-flex justify-content-evenly align-items-center ">
-                                    <img alt="logo" src='logo.png' width='45' style={{borderRadius:"10px"}}/>
-                                    <h4 style={{color:"white",fontFamily:'system-ui',borderBottom: '2px solid white',marginLeft: '5px'}} >PACKFAST</h4>
+                    <div className="nav-item has-treeview d-flex justify-content-evenly align-items-center " style={{justifyContent:'space-between',padding:"0px 10px"}}>
+                                <div className="d-flex justify-content-evenly align-items-center">
+                                    <img alt="logo" src='trelloLogo.png' width='85' style={{borderRadius:"10px"}}/>
+                                    <h4 style={{color:"white",fontFamily:'system-ui',marginLeft: '5px'}} >Chat</h4>
+                                </div>
+                                    <i class="fas fa-home"></i>
                     </div>
                     </Link>
                     <div className="sidebar">
@@ -38,54 +42,49 @@ export default function SideBar() {
                                    </li>
                             </ul>
                         </div>
-                        <nav className="mt-2">
-                            <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                                <li className="nav-item">
-                                    <Link to="/" className="nav-link">
-                                        <i className="nav-icon fas fa-chart-bar" />
-                                        <p>Dashboard</p>
-                                    </Link>
-                                </li>
-                                <li className="nav-item ">
-                                    <Link to="/commandes" className="nav-link menu-item">
-                                        <div>
-                                        <i class="nav-icon fas fa-box-open"/>
-                                        <p>Colis</p>
-                                        </div>
-                                    <i class="fas fa-chevron-right"></i>
-                                    </Link>
-                                </li>
-                                <li className="nav-item ">
-                                    <Link to="/historique" className="nav-link menu-item">
-                                    <div>
-
-                                        <i class="nav-icon fas fa-truck"/>
-                                        <p>Livraisons</p>
-                                        </div>
-                                    <i class="fas fa-chevron-right"></i>
-                                    </Link>
-                                </li>
-                                <li className="nav-item ">
-                                    <Link to="/historique" className="nav-link menu-item">
-                                    <div>
-
-                                        <i class="nav-icon fas fa-map-marked-alt"/>
-                                        <p>Adresses</p>
-                                        </div>
-                                    <i class="fas fa-chevron-right"></i>
-                                    </Link>
-                                </li>
-                               {true && <li className="nav-item">
-                                    <Link to="/configuration" className="nav-link">
-                                    <i className="fas fa-exclamation-triangle"></i>
-                                    <p>{' '}Reclamations</p>
-                                    </Link>
-                                </li>}
-                            </ul>
-                        </nav>
+                       
+                        <div className="mt-2 chat-messages">
+                            <ChatPanel/>
+                        </div>
+                        <div className="xchat d-flex">
+                            <input className='x-chat-input' type="text" placeholder="chat here..."/>
+                            <i className="x-chat-send" style={{fontSize:'25px',textAlign:'center',cursor:'pointer',margin:'auto',position: 'absolute',right: '15px'}} class="far fa-paper-plane"></i>
+                        </div>
+                       
                     </div>
                 </aside>
             }
+
+            <style jsx>
+                {`
+                .xchat {
+                    justify-content: center;
+                    align-items: center;
+                }
+                .x-chat-input{
+                    color: white;
+                    padding: 11px;
+                    flex: 1;
+                    outline: none;
+                    border: none;
+                    margin: 0px 0px;
+                    padding-right: 40px;
+                    background: #ffffff00;
+                    border-bottom: 1px solid #4f5962;
+                }
+                .chat-messages{
+                    border-bottom: 0.5px solid #4f5962;
+                    height: 45vh;
+                    margin: 0px 0px 5px 0px;
+                    overflow-y: scroll;
+                }
+
+                .chat-messages::-webkit-scrollbar {
+                    display: none;
+                  }
+        
+                `}
+            </style>
         </div>
     )
 }

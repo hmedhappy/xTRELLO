@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import SingleCard from './SingleCard'
 
 export default function NewTasks() {
-    const [list, setlist] = useState([])
     return (
         <>
              <div className="main">
