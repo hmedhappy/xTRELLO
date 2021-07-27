@@ -29,7 +29,7 @@ export default function index() {
        .card-slidee{
         display: -webkit-box;
         overflow-x: scroll;
-        width: 85vw !important;
+        width: 80vw !important;
         background-color: #fff ;
         padding: 0px 17px;
 

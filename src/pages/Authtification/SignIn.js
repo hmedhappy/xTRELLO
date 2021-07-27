@@ -17,7 +17,7 @@ export default function SignIn() {
          if (data.Login) {
            notify(`Bienvenue ${data.Login.username} `,1);
            localStorage.setItem('auth',JSON.stringify(data.Login))
-          window.location.pathname = '/'
+          window.location.pathname = '/brackets'
            }else{
            notify(' Mot de passe ou username Incorrect')
          }
