@@ -13,7 +13,7 @@ export default function Index() {
     <div>
     <div style={{background:'#fff',padding:'17px 5px 0px 26px',display:'flex',justifyContent: 'space-between'}}>
       <h3 style={{fontWeight:'bolder',color:'black'}}>Brackets</h3>
-      <div className="d-flex justify-content-between align-items-center ">
+      <div className="d-flex justify-content-between align-items-center " style={{marginRight:'43px'}}>
       <AvatarGroup max={4} spacing={'small'}>
                   {[...new Array(ramdom)].map(e=><CardAvatar/>)}
       </AvatarGroup>
