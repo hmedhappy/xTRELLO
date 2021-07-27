@@ -1,7 +1,6 @@
 import React from 'react'
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CardAvatar from '../Brackets/CardAvatar'
-import TaskCard from '../Brackets/TaskCard';
 import TextTask from './TextTask';
 
 export default function NewTasks() {
