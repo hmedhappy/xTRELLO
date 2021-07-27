@@ -54,13 +54,12 @@
  }
 
 *::-webkit-scrollbar-track:horizontal {
-  background-color : red !important ;
+  background-color : rgba(56, 55, 55, 0) !important ;
 }
 *::-webkit-scrollbar-thumb:horizontal {
   border-radius: 70px !important;
-  background-color : red !important;
+  background-color : #D9DBDC !important;
 
-  color :red !important;
 }
 /*
  .menu-item > a {

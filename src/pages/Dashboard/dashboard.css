@@ -24,7 +24,6 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #0079bf;
 }
 
 .btn {
@@ -200,12 +199,24 @@ body {
 /* Lists */
 
 .lists-container::-webkit-scrollbar {
-    height: 2.4rem;
+    height: 1.4rem;
+}
+
+.carddd::-webkit-scrollbar-thumb {
+    background-color: #66a3c700;
+    /* border: 0.8rem solid #0079bf; */
+    border-top-width: 0;
+}
+.mainTab::-webkit-scrollbar-thumb {
+    background-color: #66a3c700;
+    /* border: 0.8rem solid #0079bf; */
+    border-top-width: 0;
+
 }
 
 .lists-container::-webkit-scrollbar-thumb {
-    background-color: #66a3c7;
-    border: 0.8rem solid #0079bf;
+    background-color: #66a3c700;
+    /* border: 0.8rem solid #0079bf; */
     border-top-width: 0;
 }
 
@@ -214,8 +225,10 @@ body {
     align-items: flex-start;
     padding: 0 0.8rem 0.8rem;
     overflow-x: auto;
-    height: calc(100vh - 8.6rem);
-    background-color: #fff
+    height: 100vh;
+    background-color: #fff;
+    width: 100vw;
+
 }
 
 .list {
@@ -319,6 +332,39 @@ body {
     content: '...';
 }
 
+
+
+.carddd{
+    width: 370px;
+    height: 200px;
+    background-color: #add8e6b0;
+    border-radius: 10px;
+    margin: 5px;
+    cursor:pointer;
+
+   }
+   .carddd:hover{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+   .card-slidee{
+    display: -webkit-box;
+    overflow-x: scroll;
+    width: 80vw !important;
+    background-color: #fff ;
+    padding: 0px 17px;
+
+   }
+
+   ::-webkit-scrollbar-track {
+    background: red !important;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+
+   
 /*
 
 The following rule will only run if your browser supports CSS grid.
