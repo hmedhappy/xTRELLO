@@ -199,7 +199,7 @@ body {
 /* Lists */
 
 .lists-container::-webkit-scrollbar {
-    height: 1.4rem;
+    height: 0;
 }
 
 .carddd::-webkit-scrollbar-thumb {
@@ -227,7 +227,7 @@ body {
     overflow-x: auto;
     height: 100vh;
     background-color: #fff;
-    width: 100vw;
+    width: 98vw;
 
 }
 
@@ -349,7 +349,7 @@ body {
    .card-slidee{
     display: -webkit-box;
     overflow-x: scroll;
-    width: 80vw !important;
+    width: 85vw !important;
     background-color: #fff ;
     padding: 0px 17px;
 

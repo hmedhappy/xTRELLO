@@ -82,4 +82,4 @@ export default function Index() {
     </>
   );
 }
-/* #891BE8 move / #F8BD1C gold /   #FF3838 a7mer*/
+

@@ -15,8 +15,6 @@ import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 
 import Dashboard from './pages/Dashboard'
-import Livraisons from './pages/Livraisons'
-import Historique from './pages/Historique'
 import Authtification from './pages/Authtification'
 import Brackets from './pages/Brackets'
 
@@ -43,15 +41,6 @@ const client = new ApolloClient({
 })
 
 function App() {
-  // const [todos, settodos] = useState([])
-  // const {data:{todos:dataa=[]}={todos:[]}} = useQuery(LOAD_TODOS)
-  
-  // useEffect(() => {
-  //     console.log(dataa);
-      
-  //     settodos(()=>todos)
-  //     // eslint-disable-next-line
-  // }, [dataa]) // eslint-disable-next-line
 
   return (
     <div className='App'>
@@ -61,8 +50,6 @@ function App() {
       <Switch>
         <PublicRoute layout={LoginLoyout} component={Authtification} path="/login" />
         <PrivateRoute layout={DashboardLayout} component={Dashboard} path="/" exact/>
-        <PrivateRoute layout={DashboardLayout} component={Livraisons} path="/commandes"/>
-        <PrivateRoute layout={DashboardLayout} component={Historique} path="/historique"/>
         <PrivateRoute layout={DashboardLayout} component={Brackets} path="/brackets"/>
         <Route path="*">
           <Redirect to="/login" />

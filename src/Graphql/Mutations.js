@@ -19,3 +19,15 @@ mutation addTask($data : TaskVars) {
 }
 }
 `
+
+/* mutation {
+    addTask(data:{title: "test task 2",
+          theme: "Toptip",
+          contenu: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
+          status: "completed",
+          date_creation: "13/09/1999",
+          date_viewed: "13/09/1999",
+          creator: "60fe9c0f1a8af10aea71fc3e"}){
+      
+    }
+  } */

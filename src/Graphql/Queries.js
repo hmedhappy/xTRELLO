@@ -13,16 +13,8 @@ export const LOGIN = gql`
 }
 `
 
-export const GET_OPERATIONS = gql`
+export const GET_TASKS = gql`
    query{
-    getTasks {
-    _id
-    title
-    contenu
-    status
-    date_creation
-    date_viewed
-    creator
-  }
+  getTasks{_id title theme photo contenu status date_creation date_viewed creator}
 }
 `

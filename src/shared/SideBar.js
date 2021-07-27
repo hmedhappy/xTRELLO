@@ -43,13 +43,8 @@ export default function SideBar() {
                             </ul>
                         </div>
                        
-                        <div className="mt-2 chat-messages">
                             <ChatPanel/>
-                        </div>
-                        <div className="xchat d-flex">
-                            <input className='x-chat-input' type="text" placeholder="chat here..."/>
-                            <i className="x-chat-send" style={{fontSize:'25px',textAlign:'center',cursor:'pointer',margin:'auto',position: 'absolute',right: '15px'}} class="far fa-paper-plane"></i>
-                        </div>
+                        
                        
                     </div>
                 </aside>
