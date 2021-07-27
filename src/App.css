@@ -52,6 +52,16 @@
  *{
   font-family: 'Mulish', sans-serif;
  }
+
+*::-webkit-scrollbar-track:horizontal {
+  background-color : red !important ;
+}
+*::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 70px !important;
+  background-color : red !important;
+
+  color :red !important;
+}
 /*
  .menu-item > a {
    width: 70%;

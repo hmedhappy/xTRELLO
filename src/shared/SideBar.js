@@ -74,7 +74,7 @@ export default function SideBar() {
                 }
                 .chat-messages{
                     border-bottom: 0.5px solid #4f5962;
-                    height: 45vh;
+                    height: 65vh;
                     margin: 0px 0px 5px 0px;
                     overflow-y: scroll;
                 }

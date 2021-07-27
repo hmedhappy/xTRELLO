@@ -4,7 +4,7 @@ import SingleMessage from "./SingleMessage"
 export default function ChatPanel() {
     return (
         <>
-          {[...new Array(5)].map(e=><SingleMessage/>)}   
+          {[...new Array(10)].map(e=><SingleMessage/>)}   
         </>
     )
 }

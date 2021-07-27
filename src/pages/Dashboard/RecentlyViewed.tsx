@@ -1,80 +1,26 @@
 import React from 'react'
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import CardAvatar from '../Brackets/CardAvatar'
+import TextTask from './TextTask';
+
 
 export default function RecentlyViewed() {
     return (
         <>
-             <div className="main">
- <div className="main-content">
-    <div className="row">
-      <div className=" col-sm-12">
-        {/* TOP PRODUCT */}
-        <div className="box f-height">
-          <div className="box-header">
-            top product
-          </div>
-          <div className="box-body">
-            <ul className="product-list">
-              <li className="product-list-item">
-                <div className="item-info">
-                  <img src="./images/thumb-7.jpg" alt="product" />
-                  <div className="item-name">
-                    <div className="product-name">Jacket</div>
-                    <div className="text-second">Cloths</div>
-                  </div>
-                </div>
-                <div className="item-sale-info">
-                  <div className="text-second">Sales</div>
-                  <div className="product-sales">$5,930</div>
-                </div>
-              </li>
-              <li className="product-list-item">
-                <div className="item-info">
-                  <img src="./images/sneaker.jpg" alt="product" />
-                  <div className="item-name">
-                    <div className="product-name">sneaker</div>
-                    <div className="text-second">Cloths</div>
-                  </div>
-                </div>
-                <div className="item-sale-info">
-                  <div className="text-second">Sales</div>
-                  <div className="product-sales">$5,930</div>
-                </div>
-              </li>
-              <li className="product-list-item">
-                <div className="item-info">
-                  <img src="./images/headphone.jpg" alt="product" />
-                  <div className="item-name">
-                    <div className="product-name">headphone</div>
-                    <div className="text-second">Devices</div>
-                  </div>
-                </div>
-                <div className="item-sale-info">
-                  <div className="text-second">Sales</div>
-                  <div className="product-sales">$5,930</div>
-                </div>
-              </li>
-              <li className="product-list-item">
-                <div className="item-info">
-                  <img src="./images/backpack.jpg" alt="product" />
-                  <div className="item-name">
-                    <div className="product-name">Backpack</div>
-                    <div className="text-second">Bags</div>
-                  </div>
-                </div>
-                <div className="item-sale-info">
-                  <div className="text-second">Sales</div>
-                  <div className="product-sales">$5,930</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        {/* TOP PRODUCT */}
+    <div style={{background:'#fff',padding:'17px 5px 0px 26px',display:'flex',justifyContent: 'space-between'}}>
+      <h3 style={{fontWeight:'bolder',color:'black'}}>Recently viewed</h3>
+      <div className="d-flex justify-content-between align-items-center ">
+      <AvatarGroup max={4} spacing={'small'}>
+                  {[...new Array(Math.floor(Math.random()*30+5))].map(e=><CardAvatar/>)}
+      </AvatarGroup>
+        <h5 className="m-3" style={{cursor:"pointer"}}><b>Menu</b></h5>
       </div>
-      </div>
-  </div>
-</div>
-   
+    </div>
+       <div className="card-slidee">
+       {[...new Array(5)].map(e=><TextTask />)}
+
+   </div>
+  
         </>
     )
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CardAvatar from './CardAvatar'
 
-export default function TaskCard({length}) {
+export default function TaskCard({img=true}) {
     const [ramdom, ] = useState(Math.floor(Math.random()*4+1))
     const [ramdomPhotos, ] = useState(Math.floor(Math.random()*50+1))
     const [ramsomText, setramsomText] = useState("")
@@ -16,7 +16,7 @@ export default function TaskCard({length}) {
         <>
           <li>
               <div className='card-headerr'>
-                  {Math.random() > 0.5 ?  <img alt='ramm' src={`https://picsum.photos/200/300?random=${ramdomPhotos}`} style={{margin:"3px",width:'264px',height:'auto',    borderRadius: '10px'}} /> : null }
+                  {Math.random() > 0.5 && img ?  <img alt='ramm' src={`https://picsum.photos/200/300?random=${ramdomPhotos}`} style={{margin:"3px",width:'264px',height:'auto',    borderRadius: '10px'}} /> : null }
                  
 
                 <div className='stat-card'></div>
