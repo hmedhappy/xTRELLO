@@ -3,7 +3,8 @@ import TaskCard from './TaskCard';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CardAvatar from './CardAvatar';
 import ListCard from './ListCard';
-import './styles/style.css'
+import Addmodal from './Addmodal';
+import './styles/style.css';
 
 function groupByKey(array, key) {
   return array.reduce((hash, obj) => {
@@ -14,20 +15,28 @@ function groupByKey(array, key) {
   }, {});
 }
 
-export default function Index({tasks,settasks}) {
+export default function Index({ tasks, settasks }) {
   const [ramdom] = useState(
     Math.floor(Math.random() * 30 + 5)
   );
-  const [refresh, setrefresh] = useState(false)
-  const [groupedTasks, setgroupedTasks] = useState({})
+  const [refresh, setrefresh] = useState(false);
+  const [groupedTasks, setgroupedTasks] = useState({});
 
   useEffect(() => {
-    const taskstoGroup = tasks || []
-      const grouped = groupByKey(taskstoGroup, 'theme');
-      setgroupedTasks(grouped);
+    const taskstoGroup = tasks || [];
+    const grouped = groupByKey(taskstoGroup, 'theme');
+    setgroupedTasks(grouped);
   }, [tasks]);
 
-  
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -62,7 +71,7 @@ export default function Index({tasks,settasks}) {
           </div>
         </div>
         <section className='lists-container'>
-          {Object.keys(groupedTasks).map((key) => 
+          {Object.keys(groupedTasks).map((key) => (
             <div className='list'>
               <h3 className='list-title d-flex justify-content-between align-items-center'>
                 {key}
@@ -76,16 +85,33 @@ export default function Index({tasks,settasks}) {
                     data={e}
                     length={array.length}
                   />
-                  ))}
-                  <ListCard settasks={settasks} tasks={tasks} refresh={refresh} setrefresh={setrefresh}  ay7aja={key} />
+                ))}
+                <ListCard
+                  settasks={settasks}
+                  tasks={tasks}
+                  refresh={refresh}
+                  setrefresh={setrefresh}
+                  ay7aja={key}
+                />
               </ul>
             </div>
-          )}
+          ))}
 
-          <button className='add-list-btn btn  list-title' >
+          <button
+            onClick={() => handleOpen()}
+            className='add-list-btn btn  list-title'>
             <i class='far fa-plus-square'></i> Add a list
           </button>
-
+          <Addmodal
+            newTheme={true}
+            settasks={settasks}
+            tasks={tasks}
+            refresh={refresh}
+            setrefresh={setrefresh}
+            open={open}
+            handleClose={handleClose}
+            handleOpen={handleOpen}
+          />
         </section>
       </div>
     </>

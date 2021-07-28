@@ -23,16 +23,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Addmodal({
-  theme,
+  theme="",
   settasks,
-  refresh,
-  setrefresh,
-  tasks,
+  newTheme=false,
   open,
   handleClose,
 }) {
   const classes = useStyles();
 
+  const [themee, setthemee] = useState(theme)
   const [title, settitle] = useState("")
   const [contenu, setcontenu] = useState("")
   const [addTask, { data }] = useMutation(ADD_TASK);
@@ -45,7 +44,7 @@ export default function Addmodal({
          notify('Task ajouté avec succes',1);
         settasks(old=>[...old,{
           title,
-          theme,
+          theme:themee,
           photo:'',
          contenu,
          status: 'loading',
@@ -54,7 +53,6 @@ export default function Addmodal({
          creator: user?._id}])
     
 
-      console.log({tasks});
         //  settasks()
         handleClose()
      }
@@ -65,7 +63,7 @@ export default function Addmodal({
   const addTaskFunction = () => {
     addTask({variables:{data:{
         title,
-        theme,
+        theme:themee,
         photo:'',
        contenu,
        status: 'loading',
@@ -105,7 +103,13 @@ export default function Addmodal({
                     id='exampleInputEmail1'
                     aria-describedby='emailHelp'
                     placeholder='Enter emaill'
-                    value={theme}
+                    value={themee}
+                    onChange={({target:{value}})=>{
+                      if (newTheme) {
+                      setthemee(value)
+                    } 
+                  }}
+
                   />
                 </div>
                 <div className='form-group'>
