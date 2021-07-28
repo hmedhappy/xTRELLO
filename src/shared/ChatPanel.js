@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SingleMessage from './SingleMessage';
 import axios from 'axios'
+// import io from 'socket.io-client';
+
 
 require('dotenv').config();
 
@@ -17,14 +19,19 @@ export default function ChatPanel() {
       .then((response) => response.json())
       .then((data) => setMessages(data));
   }, []);
+  // const socket = io(`http://localhost:3000/`);
+  // socket.on('new-message',(data)=>{
+  //   setMessages(old=>[...old,data])
+  // })
 
   const addMessage = () => {
     if (!message.length || !user) {
       alert(user ? 'message vide !':'WHO ARE YOU ?!!');
     } else {
+      const newMessage = {content:message,username:user?.username}
       setMessages((old) => [
         ...old,
-        { content: message, username: user.username },
+        newMessage,
       ]);
       setMessage('');
       setTimeout(function () {
@@ -33,7 +40,8 @@ export default function ChatPanel() {
         );
         myDiv.scrollTop = myDiv.scrollHeight;
       }, 800);
-      axios.post(`${process.env.REACT_APP_BACKEND}/messages`,{content:message,username:user?.username})
+      axios.post(`${process.env.REACT_APP_BACKEND}/messages`,newMessage)
+      // socket.emit('message',newMessage)
     }
   };
   return (
