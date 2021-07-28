@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CardAvatar from '../Brackets/CardAvatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
-export default function TextTask() {
+export default function TextTask({data}) {
   const [ramdom] = useState(Math.floor(Math.random() * 6));
   const [ramsomText, setramsomText] = useState('');
   const colorllist = ['#F4F4F4', '#EBFDF5', '#F8E8E83b','#476C5D3b','#87824D3b','#626C853b'];
@@ -27,10 +27,10 @@ export default function TextTask() {
         </div>
         <div className='card-bodyy'>
           <p>
-            <b>Email mock-up to client for feedback</b>
+            <b>{data?.title}</b>  
           </p>
           <h6 style={{ minHeight: '62px' }}>
-            {ramsomText}
+            {data?.contenu || ramsomText}
           </h6>
         </div>
         <div className='card-footerr d-flex justify-content-between align-items-center'>

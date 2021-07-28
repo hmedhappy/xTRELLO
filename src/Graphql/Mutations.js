@@ -20,6 +20,14 @@ mutation addTask($data : TaskVars) {
 }
 `
 
+export const ADD_TASK = gql`
+mutation addTask($data : TaskVars) {
+    addTask(data: $data){
+ _id
+}
+}
+`
+
 /* mutation {
     addTask(data:{title: "test task 2",
           theme: "Toptip",

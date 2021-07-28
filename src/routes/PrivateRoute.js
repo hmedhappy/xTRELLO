@@ -8,7 +8,7 @@ function PrivateRoute({ component: Component, layout: Layout, ...rest }) {
       {...rest}
       render={(props) => (
         <Layout>
-          {JSON.parse(localStorage.getItem('auth')) ? <Component {...props}></Component> : <Redirect to="/login" />}
+          {JSON.parse(localStorage.getItem('auth')) ? <Component {...rest} {...props}></Component> : <Redirect to="/login" />}
         </Layout>
       )}
     ></Route>

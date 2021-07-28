@@ -15,7 +15,8 @@ export default function Header() {
           height="auto"
           width={150}
         />
-        <DisappearedLoading/>
+        <DisappearedLoading           style={{transform:'translateY(-35px) ! important'}}
+/>
       </div>
       {/* Navbar */}
       <nav  style={{height:'55px'}} className="main-header navbar navbar-expand navbar-white navbar-light">

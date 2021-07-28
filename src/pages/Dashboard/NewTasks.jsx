@@ -4,11 +4,11 @@ import CardAvatar from '../Brackets/CardAvatar'
 import TextTask from './TextTask';
 
 
-export default function RecentlyViewed() {
+export default function NewTasks({list}) {
     return (
         <>
-    <div style={{background:'#fff',padding:'17px 5px 0px 26px',display:'flex',justifyContent: 'space-between'}}>
-      <h3 style={{fontWeight:'bolder',color:'black'}}>Recently viewed</h3>
+         <div style={{background:'#fff',padding:'17px 5px 0px 26px',display:'flex',justifyContent: 'space-between'}}>
+      <h3 style={{fontWeight:'bolder',color:'black'}}>New <span>({list?.length})</span></h3>
       <div className="d-flex justify-content-between align-items-center ">
       <AvatarGroup max={4} spacing={'small'}>
                   {[...new Array(Math.floor(Math.random()*30+5))].map(e=><CardAvatar/>)}
@@ -17,10 +17,9 @@ export default function RecentlyViewed() {
       </div>
     </div>
        <div className="card-slidee">
-       {[...new Array(5)].map(e=><TextTask />)}
+       {list?.map(e=><TextTask />)}
 
    </div>
-  
         </>
     )
 }
