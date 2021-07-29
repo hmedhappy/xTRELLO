@@ -207,6 +207,10 @@ body {
     height: 10px;
 }
 
+.card-slidee::-webkit-scrollbar-thumb {
+    /* color: red !important; */
+    background-color: #A7A7A7 !important;
+}
 .carddd::-webkit-scrollbar-thumb {
     background-color: #66a3c700;
     /* border: 0.8rem solid #0079bf; */

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { logout as Logout } from '../utils/Logout';
 import ChatPanel from "./ChatPanel"
 
 export default function SideBar() {
@@ -8,24 +9,20 @@ export default function SideBar() {
     const [user, ] = useState(JSON.parse(localStorage.getItem('auth')))
 
 
-    const logout = () =>{
-        localStorage.removeItem('auth');
-        history.push({
-            pathname: "/login",
-        });
-        setTimeout(() => window.location.reload(), 0);
+     const logout = () =>{
+        Logout(history)
     }
     return (
         <div>
             {
                 <aside className="main-sidebar sidebar-dark-primary elevation-4" style={{backgroundColor: "#1E1E2D",borderRadius:'0px 15px 15px 0px',height:'107vh'}}>
-                    <Link to="/" className="brand-link">
+                    <Link to="#" className="brand-link"               data-widget="pushmenu">
                     <div className="nav-item has-treeview d-flex justify-content-evenly align-items-center " style={{justifyContent:'space-between',padding:"0px 10px"}}>
                                 <div className="d-flex justify-content-evenly align-items-center">
                                     <img alt="logo" src='trelloLogo.png' width='85' style={{borderRadius:"10px"}}/>
                                     <h4 style={{color:"white",fontFamily:'system-ui',marginLeft: '5px'}} >Chat</h4>
                                 </div>
-                                    <i className="fas fa-home"></i>
+                                    <i className="fas fa-times-circle"></i>
                     </div>
                     </Link>
                     <div className="sidebar">

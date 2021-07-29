@@ -77,7 +77,7 @@ export default function Index({ tasks, settasks }) {
                 {key}
                 <i
                   class='fas fa-ellipsis-h'
-                  style={{ cursor: 'pointer' }}></i>
+                  style={{ cursor: 'pointer',color: "#CDCCCA"}}></i>
               </h3>
               <ul className='list-items'>
                 {groupedTasks[key]?.map((e, i, array) => (

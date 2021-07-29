@@ -10,6 +10,14 @@ export default function TaskCard({ img = true, data }) {
     Math.floor(Math.random() * 50 + 1)
   );
   const [ramsomText, setramsomText] = useState('');
+  const [toggle, settoggle] = useState(false);
+  var colors = [
+    '#4339F2',
+    '#FF3838',
+    '#891BE8',
+    '#1AD698',
+    '#F8BD1C',
+  ];
   useEffect(() => {
     fetch(
       'https://baconipsum.com/api/?type=all-meat&sentences=1&start-with-lorem=1'
@@ -18,32 +26,17 @@ export default function TaskCard({ img = true, data }) {
       .then((data) => setramsomText(data[0]));
   }, []);
 
-  const [toggle, settoggle] = useState(false);
-
+  function pickColor() {
+    const color =
+      colors[Math.floor(Math.random() * colors.length - 1)];
+    colors = colors.filter((e) => e !== color);
+    return color;
+  }
   return (
     <>
       <li
         className={`${toggle ? 'ss container' : ''}`}
         onClick={() => settoggle(!toggle)}>
-        {data?.status === 'loading' ? (
-          <i
-            className='fas fa-spinner'
-            style={{
-              position: 'relative',
-              left: '21rem',
-            }}></i>
-        ) : (
-          <i
-            className='far fa-check-circle'
-            data-toggle='tooltip'
-            data-placement='right'
-            title={data?.status}
-            style={{
-              color: 'green',
-              position: 'relative',
-              left: '21rem',
-            }}></i>
-        )}
         <style jsx>
           {`
             .ss {
@@ -64,7 +57,40 @@ export default function TaskCard({ img = true, data }) {
               }}
             />
           ) : null}
-          <div className='stat-card'></div>
+          <div className='stats d-flex'>
+            {[
+              ...new Array(
+                Math.floor(
+                  Math.random() * (colors?.length - 1)
+                )
+              ),
+            ].map((e) => (
+              <div
+                className='stat-card'
+                style={{
+                  backgroundColor: `${pickColor()}`,
+                }}></div>
+            ))}
+          </div>
+          {data?.status === 'loading' ? (
+            <i
+              className='fas fa-spinner'
+              style={{
+                position: 'relative',
+                left: '21rem',
+              }}></i>
+          ) : (
+            <i
+              className='far fa-check-circle'
+              data-toggle='tooltip'
+              data-placement='right'
+              title={data?.status}
+              style={{
+                color: 'green',
+                position: 'relative',
+                left: '21rem',
+              }}></i>
+          )}
         </div>
         <div className='card-bodyy'>
           <p>
