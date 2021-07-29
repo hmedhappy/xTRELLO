@@ -70,7 +70,7 @@ export default function Index({ tasks, settasks }) {
             </h5>
           </div>
         </div>
-        <section className='lists-container'>
+        <section className='lists-container' style={{height:'calc(97vh + 9rem)'}}>
           {Object.keys(groupedTasks).map((key) => (
             <div className='list'>
               <h3 className='list-title d-flex justify-content-between align-items-center'>

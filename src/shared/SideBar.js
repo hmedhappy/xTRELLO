@@ -18,7 +18,7 @@ export default function SideBar() {
     return (
         <div>
             {
-                <aside className="main-sidebar sidebar-dark-primary elevation-4" style={{backgroundColor: "#1E1E2D"}}>
+                <aside className="main-sidebar sidebar-dark-primary elevation-4" style={{backgroundColor: "#1E1E2D",borderRadius:'0px 15px 15px 0px',height:'107vh'}}>
                     <Link to="/" className="brand-link">
                     <div className="nav-item has-treeview d-flex justify-content-evenly align-items-center " style={{justifyContent:'space-between',padding:"0px 10px"}}>
                                 <div className="d-flex justify-content-evenly align-items-center">

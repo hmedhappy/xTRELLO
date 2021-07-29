@@ -30,7 +30,7 @@ const errorLink = onError(
 
 const link = from([
   errorLink,
-  new HttpLink({ uri: process.env.REACT_APP_BACKEND }),
+  new HttpLink({ uri: process.env.NODE_ENV==="development"? process.env.REACT_APP_BACKEND_DEV : process.env.REACT_APP_BACKEND_PROD }),
 ]);
 
 const client = new ApolloClient({

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleMessage from './SingleMessage';
 import axios from 'axios'
+import { Button } from '@material-ui/core';
 // import io from 'socket.io-client';
 
 // import { io } from 'socket.io-client';
@@ -16,7 +17,7 @@ export default function ChatPanel() {
 
   useEffect(() => {
     console.log('hello');
-    fetch(`${process.env.REACT_APP_BACKEND}/messages`)
+    fetch(`${process.env.NODE_ENV==="development"? process.env.REACT_APP_BACKEND_DEV : process.env.REACT_APP_BACKEND_PROD}/messages`)
       .then((response) => response.json())
       .then((data) => setMessages(data));
   }, []);
@@ -51,7 +52,7 @@ export default function ChatPanel() {
         );
         myDiv.scrollTop = myDiv.scrollHeight;
       }, 800);
-      axios.post(`${process.env.REACT_APP_BACKEND}/messages`,newMessage)
+      axios.post(`${process.env.NODE_ENV==="development"? process.env.REACT_APP_BACKEND_DEV : process.env.REACT_APP_BACKEND_PROD}/messages`,newMessage)
       // socket.emit('message',newMessage)
     }
   };
@@ -60,23 +61,25 @@ export default function ChatPanel() {
     <>
       <div
         className='mt-2 chat-messages'
-        style={{ scrollBehavior: 'smooth' }}>
+        style={{ scrollBehavior: 'smooth',height:'67vh'}}>
         {messages?.map((e) => (
           <SingleMessage message={e} />
         ))}
       </div>
       <div className='xchat d-flex'>
-        <input
+       <form onSubmit={(e)=>{e.preventDefault();addMessage()}} style={{width:"100%"}}>
+       <input
           className='x-chat-input'
           type='text'
           placeholder='chat here...'
           value={message}
+          style={{width:"100%"}}
           onChange={({ target: { value } }) => {
             setMessage(value);
           }}
         />
+        <Button type="submit" style={{color:'white !important',display:"none"}} >
         <i
-          onClick={() => addMessage()}
           className='x-chat-send'
           style={{
             fontSize: '25px',
@@ -87,13 +90,10 @@ export default function ChatPanel() {
             right: '15px',
           }}
           class='far fa-paper-plane'></i>
-            <i
-          onClick={() => addMessage()}
-          className='x-chat-send'
-          style={{
-            fontSize: '25px',
-          }}
-          class='fab fa-accessible-icon'></i>
+        </Button>
+       </form>
+        
+           
       </div>
     </>
   );

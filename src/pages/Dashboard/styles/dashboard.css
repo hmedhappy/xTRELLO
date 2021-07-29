@@ -431,7 +431,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
     .list-items {
         display: grid;
         grid-row-gap: 0.6rem;
-        height: 81vh !important;
+        height: calc(104vh - 8vh);
 
     }
 

@@ -23,7 +23,7 @@ export default function Index({tasks, settasks}) {
  },[tasks])
   return (
     <>
-      <div className='mainTab'> 
+      <div className='mainTab' style={{paddingBottom:'45px'}}> 
         <RecentlyViewed list={viewed} />
         <NewTasks  list={recetnly} />
         <ProcessTask  list={process} />
