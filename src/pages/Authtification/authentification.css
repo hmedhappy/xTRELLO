@@ -27,6 +27,19 @@
 @media only screen and (max-width: 600px){
   .welcome-logo{
     zoom: 0.4;
+    height: 46vh;
+
+   }
+   .welcome-logo > img {
+    object-fit: cover;
+    width: 334vw;
+    height: 167Vh;
+   }
+   .sign-container{
+    margin: inherit !important;
+   }
+   .sign-button{
+    bottom: unset !important;
    }
    .welcome{
      flex-direction : column ;
@@ -35,6 +48,18 @@
 @media only screen and (max-width: 425px){
   .welcome-logo{
     zoom: 0.3;
+    height: 46vh;
+   }
+   .welcome-logo > img {
+    object-fit: cover;
+    width: 334vw;
+    height: 167Vh;
+   }
+   .sign-button{
+    bottom: unset !important;
+   }
+   .sign-container{
+    margin: inherit !important;
    }
    .welcome{
     flex-direction : column ;
@@ -46,6 +71,11 @@
     display: grid;
     place-content: center;
     background-color: #F1C98A ;
+}
+.welcome-logo > img {
+  object-fit: cover;
+    width: 50vw;
+    height: 100vh;
 }
 .welcome{
     height:100vh;
