@@ -27,26 +27,21 @@ export default function SignIn() {
   
     if (loading) return <div style={{textAlign:"center"}}>Connexion...<DisappearedLoading style={{position:"inherit !important",margin:'auto'}}  /></div>;
     return (
-      <div className="box" style={{margin:"15px"}}>
+      <div className="box" style={{margin:"15px",border:'0.5px solid #e83d31'}}>
       <div className="box-header">
-         Bienvenue
+         Bienvenue__a <span><img alt="sddsd" width="75" src="trelloLogo.png" /></span>
       </div>
       <div className="box-body overflow-scroll">
       <form onSubmit={(e)=>{e.preventDefault() ; LoginF({variables:{data:{username,password}}}) ;  } } >
     <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+    <label htmlFor="exampleInputEmail1" className="form-label">Username</label>
     <input required type="text" placeholder='username' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={username} onChange={({target:{value}})=>setusername(value)} />
-    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
     </div>
     <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
     <input required type="password" placeholder="password" className="form-control" id="exampleInputPassword1" value={password} onChange={({target:{value}})=>setpassword(value)} />
     </div>
-    <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <button type="submit" className="btn btn-primary logg" style={{color:'#e83d31'}}>Connect</button>
     </form>
     
     

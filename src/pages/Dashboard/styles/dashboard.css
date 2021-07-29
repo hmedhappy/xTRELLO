@@ -202,6 +202,11 @@ body {
     height: 0;
 }
 
+.card-slidee::-webkit-scrollbar {
+    background: white!important;
+    height: 10px;
+}
+
 .carddd::-webkit-scrollbar-thumb {
     background-color: #66a3c700;
     /* border: 0.8rem solid #0079bf; */
@@ -219,17 +224,18 @@ body {
     /* border: 0.8rem solid #0079bf; */
     border-top-width: 0;
 }
-
+/* zoomD  */
 .lists-container {
     display: flex;
     align-items: flex-start;
     padding: 0 0.8rem 0.8rem;
     overflow-x: auto;
-    height: 100vh;
+    height: 97vh;
     background-color: #fff;
-    width: 98vw;
+    width: 123vw;
 
 }
+/* zoomD  */
 
 .list {
     flex: 0 0 27rem;
@@ -262,6 +268,8 @@ body {
     align-content: flex-start;
     padding: 0 0.6rem 0.5rem;
     overflow-y: auto;
+    overflow-x: hidden;
+
 }
 
 .list-items::-webkit-scrollbar {
@@ -346,18 +354,18 @@ body {
    .carddd:hover{
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
+/* zoomD  */
    .card-slidee{
     display: -webkit-box;
     overflow-x: scroll;
-    width: 98vw !important;
+    overflow-y: hidden;
+    width: 123vw !important;
     background-color: #fff ;
     padding: 0px 17px;
 
    }
-
-   ::-webkit-scrollbar-track {
-    background: red !important;
-  }
+/* zoomD  */
+ 
 
   body::-webkit-scrollbar-thumb {
     background-color: darkgrey;

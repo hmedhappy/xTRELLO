@@ -16,11 +16,14 @@ export default function RecentlyViewed({list}) {
         <h5 className="m-3" style={{cursor:"pointer"}}><b>Menu</b></h5>
       </div>
     </div>
-       <div className="card-slidee">
+       <div className={`card-slidee ${list?._id}-recent`} onWheel={(e)=>{
+         var item = document.querySelector(`.${list?._id}-recent`)
+         if (e.deltaY > 0) item.scrollLeft += 100;
+         else item.scrollLeft -= 100;
+       }}  >
        {list?.map(e=><TextTask data={e}/>)}
 
    </div>
-  
         </>
     )
 }

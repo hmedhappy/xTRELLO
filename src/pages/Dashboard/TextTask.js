@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import CardAvatar from '../Brackets/CardAvatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import { Collapse } from '@material-ui/core';
 
 export default function TextTask({data}) {
   const [ramdom] = useState(Math.floor(Math.random() * 6));
   const [ramsomText, setramsomText] = useState('');
+  const [toggle, settoggle] = useState(false)
   const colorllist = ['#F4F4F4', '#EBFDF5', '#F8E8E83b','#476C5D3b','#87824D3b','#626C853b'];
   useEffect(() => {
     fetch(
@@ -16,7 +18,7 @@ export default function TextTask({data}) {
   return (
     <>
       <div
-        className='carddd'
+        className={`carddd ${toggle ? "upp" :""}`}
         style={{
           backgroundColor: `${
             colorllist[Math.floor(Math.random() * 6)]
@@ -25,13 +27,15 @@ export default function TextTask({data}) {
         <div className='card-headerr'>
           <div className='stat-card'></div>
         </div>
-        <div className='card-bodyy'>
-          <p>
+        <div className='card-bodyy' onClick={()=>settoggle(!toggle)}>
+         <Collapse in={toggle} style={{minHeight:'90px',visibility:'visible'}}>
+         <p>
             <b>{data?.title}</b>  
           </p>
           <h6 style={{ minHeight: '62px' }}>
             {data?.contenu || ramsomText}
           </h6>
+         </Collapse>
         </div>
         <div className='card-footerr d-flex justify-content-between align-items-center'>
           <div>
@@ -48,6 +52,15 @@ export default function TextTask({data}) {
           </div>
         </div>
       </div>
+      <style jsx>
+        {`
+        .upp{
+          height: fit-content;
+          position:relative;
+          z-index:45345345 !important;
+        }
+        `}
+      </style>
     </>
   );
 }

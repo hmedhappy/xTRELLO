@@ -9,7 +9,7 @@ export default function Footer() {
       <div>
           {/* Main Footer */}
           <footer className="main-footer">
-              <strong>Copyright © {year} <a href="/" target="_blanc">Ahmed Ferah</a>. </strong>
+              <strong>Copyright © {year} <a href="https://www.facebook.com/ahmed.jackson.180/" target="_blanc">Ahmed Ferah</a>. </strong>
                 All rights reserved.
               <div className="float-right d-none d-sm-inline-block">
                     <b>Version</b> 1.0.0

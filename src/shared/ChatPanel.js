@@ -3,6 +3,7 @@ import SingleMessage from './SingleMessage';
 import axios from 'axios'
 // import io from 'socket.io-client';
 
+// import { io } from 'socket.io-client';
 
 require('dotenv').config();
 
@@ -19,6 +20,16 @@ export default function ChatPanel() {
       .then((response) => response.json())
       .then((data) => setMessages(data));
   }, []);
+
+   
+
+  // const socket = io('http://localhost:3000');
+
+  
+  // function HelloTest() {
+  //     socket.emit("message",'bonjour je vient envoyer autre');
+  //   }
+
   // const socket = io(`http://localhost:3000/`);
   // socket.on('new-message',(data)=>{
   //   setMessages(old=>[...old,data])
@@ -44,6 +55,7 @@ export default function ChatPanel() {
       // socket.emit('message',newMessage)
     }
   };
+  
   return (
     <>
       <div
@@ -75,6 +87,13 @@ export default function ChatPanel() {
             right: '15px',
           }}
           class='far fa-paper-plane'></i>
+            <i
+          onClick={() => addMessage()}
+          className='x-chat-send'
+          style={{
+            fontSize: '25px',
+          }}
+          class='fab fa-accessible-icon'></i>
       </div>
     </>
   );

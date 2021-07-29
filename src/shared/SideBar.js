@@ -25,7 +25,7 @@ export default function SideBar() {
                                     <img alt="logo" src='trelloLogo.png' width='85' style={{borderRadius:"10px"}}/>
                                     <h4 style={{color:"white",fontFamily:'system-ui',marginLeft: '5px'}} >Chat</h4>
                                 </div>
-                                    <i class="fas fa-home"></i>
+                                    <i className="fas fa-home"></i>
                     </div>
                     </Link>
                     <div className="sidebar">

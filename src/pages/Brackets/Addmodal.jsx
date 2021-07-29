@@ -144,7 +144,7 @@ export default function Addmodal({
                 <button
                   type='submit'
                   className='btn btn-primary'>
-                  Ajouter <i style={{fontSize:"15px",marginLeft:"5px"}} class="fas fa-plus"></i>
+                  Ajouter <i style={{fontSize:"15px",marginLeft:"5px"}} className="fas fa-plus"></i>
                 </button>
               </form>
             </div>

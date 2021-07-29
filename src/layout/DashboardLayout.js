@@ -9,7 +9,8 @@ function DashboardLayout(props) {
       <div className="wrapper">
           <Header />
           <SideBar />
-            <div className="content-wrapper">
+          {/* zoomD */}
+            <div className="content-wrapper" style={{zoom:'0.8'}}>
                 <React.Fragment>{props.children}</React.Fragment>
             </div>
           <Footer />
